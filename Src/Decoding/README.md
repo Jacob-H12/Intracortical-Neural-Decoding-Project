@@ -29,5 +29,6 @@
 ##### 输出 spikes shape: (6952301, 137), 时间点数：6,952,301, 神经通道数：137. 137 个神经元/神经通道, 每 1 ms 一个 spike count
 ##### 例如：clock_time: 0 days 00:00:00.001000      2931: 1.0. 这表示在 1 ms 这个时间 bin，编号为 2931 的神经通道发放了一个 spike.
 #### 2.3.6 heldout_spikes ( 对应 hand position)
-
+##### 输出 heldout_spikes shape: (6952301, 45), 45 个 held-out 神经通道
+##### 在 benchmark 任务中，模型可能只能看到 spikes，然后要预测或者重建 heldout_spikes
 
