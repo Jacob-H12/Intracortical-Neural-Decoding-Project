@@ -18,11 +18,16 @@
 #### 2.3 各个 signal type 的含义
 #### 2.3.1 cursor_pos (对应 cursor position)
 ##### 屏幕上光标的二维位置 (cursor_pos x & cursor_pos y)
-#### 2.3.2 eye_pos ( 对应 eye position)
+#### 2.3.2 eye_pos (对应 eye position)
 ##### 眼睛位置, 这个信号通常用于检查动物是否注视，或者作为行为控制变量
-#### 2.3.3 hand_pos
-#### 2.3.4 hand_vel
-#### 2.3.5 spikes
-#### 2.3.6 heldout_spikes
+#### 2.3.3 hand_pos (对应 hand position)
+##### 输出 hand_pos shape: (6952301, 2), 说明: 6,952,301 个时间点,每个时间点有 x、y 两个坐标, 就是每 1 ms 的手部位置
+#### 2.3.4 hand_vel (对应 hand velocity)
+##### 输出 hand_vel shape: (6952301, 2), 说明: 每个时间点都有 x 方向速度, 每个时间点都有 y 方向速度
+##### 做运动解码时很重要。可以用神经活动预测 hand_vel_x & hand_vel_y
+#### 2.3.5 spikes (主要的神经数据)
+##### 输出 spikes shape: (6952301, 137), 时间点数：6,952,301, 神经通道数：137. 137 个神经元/神经通道, 每 1 ms 一个 spike count
+##### 例如：clock_time: 0 days 00:00:00.001000      2931: 1.0. 这表示在 1 ms 这个时间 bin，编号为 2931 的神经通道发放了一个 spike.
+#### 2.3.6 heldout_spikes ( 对应 hand position)
 
 
