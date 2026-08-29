@@ -31,4 +31,21 @@
 #### 2.3.6 heldout_spikes ( 对应 hand position)
 ##### 输出 heldout_spikes shape: (6952301, 45), 45 个 held-out 神经通道
 ##### 在 benchmark 任务中，模型可能只能看到 spikes，然后要预测或者重建 heldout_spikes
-
+#### 2.4 dataset.trial_info：每个 trial 的信息
+##### 输出 trial_info shape: (2295, 18), 2295 个 trials, 每个 trial 有 18 个字段
+##### 如下 Index(['trial_id', 'start_time', 'end_time', 'trial_type', 'trial_version','maze_id', 'success', 'target_on_time', 'go_cue_time','move_onset_time', 'rt', 'delay', 'num_targets', 'target_pos','num_barriers', 'barrier_pos', 'active_target', 'split'],dtype='object')
+#### 2.4.1 trial_id
+##### trial 编号
+#### 2.4.2 start_time
+##### trial 开始的全局时间
+#### 2.4.3 end_time
+##### trial 结束的全局时间
+#### 2.4.4 trial_type
+##### 试次类型, 通常代表不同条件，例如不同目标、不同 maze layout、不同障碍物配置
+##### 做条件平均 PSTH 的时候，可以按trial_type分组
+#### 2.4.5 trial_version
+##### trial 版本, 通常是任务设计中的版本标签，可能表示同一种 trial_type 下的不同配置版本
+#### 2.4.6 maze_id
+##### maze 编号, 就是迷宫配置编号, MC_Maze 是 maze reaching task，所以不同 trial 可能对应不同 maze layout
+##### 要按迷宫条件分析神经轨迹，可以按maze_id分组
+#### 2.4.7
