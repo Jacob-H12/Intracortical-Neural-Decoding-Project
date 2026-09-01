@@ -78,3 +78,13 @@
 ##### 适合: 查看整个实验连续记录, 做连续解码, 按时间窗口手动截取
 ##### 2.5.2 trial_data 按 trial 切分后的数据
 ##### 适合：做 PSTH, 做 trial average, 按 go cue / movement onset 对齐, 做 PCA 神经轨迹, 分条件比较神经活动
+## 3. 总结
+| 数据 | shape | 含义 |
+|--------|--------|--------|
+| dataset.data | (6952301, 190) | 连续 1 ms 数据 |
+| spikes | (6952301, 137) | 137 个 held-in 神经通道 |
+| heldout_spikes | (6952301, 45) | 45 个 held-out 神经通道 |
+| hand_pos | (6952301, 2) | 手部 x/y 位置 |
+| hand_vel | (6952301, 2)| 手部 x/y 速度 |
+| trial_info | (2295, 18) | 2295 个 trial 的信息 |
+| trial_data | (6809920, 195) | 按 trial 展开的 1 ms 数据 |	
