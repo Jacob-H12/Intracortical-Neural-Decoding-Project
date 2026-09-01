@@ -48,4 +48,28 @@
 #### 2.4.6 maze_id
 ##### maze 编号, 就是迷宫配置编号, MC_Maze 是 maze reaching task，所以不同 trial 可能对应不同 maze layout
 ##### 要按迷宫条件分析神经轨迹，可以按maze_id分组
-#### 2.4.7
+#### 2.4.7 success
+##### 是否成功完成 trial
+#### 2.4.8 target_on_time
+##### 目标出现时间, 这是全局时间
+##### 在 delayed reaching task 中，常见流程是: trial start -> target appears -> delay period -> go cue -> movement onset -> movement end
+#### 2.4.9 go_cue_time
+##### go cue 出现时间, 这是允许猴子开始运动的信号时间
+#### 2.4.10 move_onset_time
+##### 运动真正开始的时间, 这是行为学定义的 movement onset, 通常基于手速度阈值检测
+#### 2.4.11 rt
+##### reaction time, 反应时, 也就是从 go cue 到真正开始运动之间的时间
+#### 2.4.12 delay
+##### delay period 长度, 也就是看到目标后，到 go cue 出现之前的等待时间
+#### 2.4.13 num_targets
+##### 目标数量, MC_Maze 任务中可能一个 trial 有多个候选目标, active_target 指示当前真正目标是哪一个
+#### 2.4.14 target_pos
+##### 目标位置, 可能是二维坐标数组
+#### 2.4.15 num_barriers
+##### 障碍物数量, MC_Maze 的特色就是 maze reaching, 猴子需要绕开 barrier
+#### 2.4.16 barrier_pos
+##### 障碍物位置, 每个 barrier 用一组数描述, 可以先理解为障碍物在二维空间里的位置和尺寸
+#### 2.4.17 active_target
+##### 
+#### 2.4.18 split
+
