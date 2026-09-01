@@ -70,6 +70,11 @@
 #### 2.4.16 barrier_pos
 ##### 障碍物位置, 每个 barrier 用一组数描述, 可以先理解为障碍物在二维空间里的位置和尺寸
 #### 2.4.17 active_target
-##### 
+##### 当前 trial 的真实目标编号, 如果一个 trial 中有多个 target，那么 active_target 告诉你猴子实际要到哪一个 target
 #### 2.4.18 split
-
+##### 数据划分, 说明 trial 被分成训练集和验证集
+#### 2.5 trial_data 和 dataset.data 的区别
+##### 2.5.1 dataset.data 连续全局数据
+##### 适合: 查看整个实验连续记录, 做连续解码, 按时间窗口手动截取
+##### 2.5.2 trial_data 按 trial 切分后的数据
+##### 适合：做 PSTH, 做 trial average, 按 go cue / movement onset 对齐, 做 PCA 神经轨迹, 分条件比较神经活动
