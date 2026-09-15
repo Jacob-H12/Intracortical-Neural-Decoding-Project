@@ -20,3 +20,14 @@
 #### Basic_ridge_trajectory
 <img width="2100" height="2100" alt="basic_ridge_trajectory" src="https://github.com/user-attachments/assets/f1810c78-3f0b-4b9c-be48-79dfce9d93c1" />
 
+## 2. 做 Ridge 参数扫描
+### 现在的参数
+#### bin_size = 20 (20 ms bin)
+#### history_bins = 5 (过去 100 ms 神经活动)
+#### ridge_alpha = 100.0 (Ridge alpha = 100)
+
+### Ridge baseline
+| Model | Split | Bin size | Spike history | Alpha | R2 overall | Corr x | Corr y |
+|--------|--------|--------|--------|--------|--------|--------|--------|
+| Basic Ridge | chronological 80/20 | 20 ms | 100 ms | 100 | 0.331 | 0.603 | 0.547 |
+| Tuned Ridge | chronological 80/20 | 50 ms | 500 ms | 1000 | 0.553 | 0.751 | 0.737 |
